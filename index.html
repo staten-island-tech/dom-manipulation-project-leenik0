@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,17 +8,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="big-black-box">
-      <p id="text">this is a big black box, now go look at the console</p>
-
-      <button type="button" id="btn">Click Me!</button>
-      <ul>
-        <li class="point">1</li>
-        <li class="point" id="point2">2</li>
-        <li class="point">3</li>
-      </ul>
-
-      <script src="index.js"></script>
+    <div id="box-container">
+      <div class="container" id="box-1">
+        <p id="song-name">Song Name</p>
+        <input type="text" id="input-1" />
+        <button type="button" id="btn-1">Submit</button>
+      </div>
+      <div class="container" id="box-2">
+        <p id="song-artist">Artist</p>
+        <input type="text" id="input-2" />
+        <button type="button" id="btn-2">Submit</button>
+      </div>
+      <div class="container" id="box-3">
+        <p id="song-cover">Cover Art</p>
+        <input type="text" id="input-3" />
+        <button type="button" id="btn-3">Submit</button>
+      </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
