@@ -1,7 +1,5 @@
 const DOMselectors = {
-  button1: document.getElementById("btn-1"),
-  button2: document.getElementById("btn-2"),
-  button3: document.getElementById("btn-3"),
+  button: document.getElementById("btn"),
   box: document.getElementById("box-container"),
   input1: document.querySelector(`#input-1`),
   input2: document.querySelector(`#input-2`),
@@ -9,28 +7,25 @@ const DOMselectors = {
 };
 
 function cardElements() {
-  DOMselectors.button1.addEventListener("click", function () {
+  DOMselectors.button.addEventListener("click", function () {
     let input1 = DOMselectors.input1.value;
-    DOMselectors.box.insertAdjacentHTML("beforeend", `<h1>${input1}</h1>`);
-    DOMselectors.input1.value = "";
-  });
-
-  DOMselectors.button2.addEventListener("click", function () {
     let input2 = DOMselectors.input2.value;
-    DOMselectors.box.insertAdjacentHTML("beforeend", `<h2>${input2}</h2>`);
-    DOMselectors.input2.value = "";
-  });
-
-  DOMselectors.button3.addEventListener("click", function () {
     let input3 = DOMselectors.input3.value;
-    //   DOMselectors.input3.src = `${input3}`;
     DOMselectors.box.insertAdjacentHTML(
       "beforeend",
-      `<img src= ${input3} alt="your image">`
+      `<div class="card">
+    <h2 class="card-header">${input1}</h2>
+    <h3 class="card-artist">${input2}</h3>
+    <img src="${input3}" alt="your image" class="card-img" />
+  </div>`
     );
+    DOMselectors.input1.value = "";
+    DOMselectors.input2.value = "";
     DOMselectors.input3.value = "";
   });
 }
+
+cardElements();
 // const cat = "meow";
 // DOMselectors.box.insertAdjacentHTML("beforeend", `<h1>We are a ${cat}<h1/>`);
 

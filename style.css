@@ -5,13 +5,31 @@
     color: cornsilk;
     text-align: center;
   } */
+
+html{
+  text-align: center;
+}
 .container{
   background-color: #a6d592;
   border: 3px solid #8e9279;
-  text-align: center;
   padding: 1vh;
   margin: 1vw;
   margin-right: 80vw;
+}
+
+#btn{
+  background-color: silver;
+  border: none;
+  border-radius: 50%;
+  padding: 1.5vh;
+  margin: 1vh;
+  font-size: 125%;
+  box-shadow: 2px 2px 10px;
+  transition: 0.5s;
+}
+
+#btn:hover{
+  transform: scale(1.15);
 }
 
 #e75254
