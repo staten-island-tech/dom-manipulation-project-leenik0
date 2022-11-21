@@ -6,35 +6,36 @@ const DOMselectors = {
   input3: document.querySelector(`#input-3`),
 };
 
-function cardElements() {
-  DOMselectors.button.addEventListener("click", function () {
-    let input1 = DOMselectors.input1.value;
-    let input2 = DOMselectors.input2.value;
-    let input3 = DOMselectors.input3.value;
-    DOMselectors.box.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" id="card-box">
+DOMselectors.button.addEventListener("click", function () {
+  let input1 = DOMselectors.input1.value;
+  let input2 = DOMselectors.input2.value;
+  let input3 = DOMselectors.input3.value;
+  DOMselectors.box.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card" id="card-box">
     <h2 class="card-header">${input1}</h2>
     <h3 class="card-artist">${input2}</h3>
     <img src="${input3}" alt="your image" class="card-img" />
     <button type="button" id="removecard">Remove</button>
   </div>`
-    );
-    DOMselectors.input1.value = "";
-    DOMselectors.input2.value = "";
-    DOMselectors.input3.value = "";
-    const remove = document.querySelectorAll(`#removecard`);
-    function rmv() {
-      remove.forEach((button) => {
-        button.addEventListener("click", function (e) {
-          e.target.parentElement.remove();
-        });
-      });
-    }
-    rmv();
+  );
+  novalue();
+  rmv();
+});
+
+function novalue() {
+  DOMselectors.input1.value = "";
+  DOMselectors.input2.value = "";
+  DOMselectors.input3.value = "";
+}
+function rmv() {
+  const remove = document.querySelectorAll(`#removecard`);
+  remove.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.target.parentElement.remove();
+    });
   });
 }
-cardElements();
 
 // const cat = "meow";
 // DOMselectors.box.insertAdjacentHTML("beforeend", `<h1>We are a ${cat}<h1/>`);
